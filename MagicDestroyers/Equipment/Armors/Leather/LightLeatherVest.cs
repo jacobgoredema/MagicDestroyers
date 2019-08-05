@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MagicDestroyers.Equipment.Armors.Heavy
+namespace MagicDestroyers.Equipment.Armors.Leather
 {
-    public class Chainlink
+    public class LightLeatherVest
     {
         private int armorPoints;
 
-        public int Armorpoints
+        public int ArmorPoints
         {
             get
             {
@@ -20,20 +20,18 @@ namespace MagicDestroyers.Equipment.Armors.Heavy
             {
                 if (value >= 0)
                 {
-                    value = armorPoints;
+                    armorPoints = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Armor points must be a positive number");
+                    throw new ArgumentOutOfRangeException(string.Empty, "Armor points should be a positive number");
                 }
             }
         }
 
-        public Chainlink()
+        public LightLeatherVest()
         {
 
         }
-
-
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MagicDestroyers.Equipment.Weapons.Sharp
+namespace MagicDestroyers.Equipment.Weapons.Blunt
 {
-    public class Axe
+    public class Hammers
     {
         private int damage;
 
@@ -20,7 +20,7 @@ namespace MagicDestroyers.Equipment.Weapons.Sharp
             {
                 if (value >= 0)
                 {
-                    damage = value;
+                    value = damage;
                 }
                 else
                 {
@@ -29,12 +29,12 @@ namespace MagicDestroyers.Equipment.Weapons.Sharp
             }
         }
 
-        public Axe()
+        public Hammers()
         {
 
         }
 
-        public void HackNSlash()
+        public void Stun()
         {
             throw new NotImplementedException();
         }

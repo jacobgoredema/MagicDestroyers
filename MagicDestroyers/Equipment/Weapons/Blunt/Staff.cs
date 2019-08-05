@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MagicDestroyers.Equipment.Weapons.Sharp
+namespace MagicDestroyers.Equipment.Weapons.Blunt
 {
-    public class Axe
+    public class Staff
     {
         private int damage;
 
@@ -29,12 +29,12 @@ namespace MagicDestroyers.Equipment.Weapons.Sharp
             }
         }
 
-        public Axe()
+        public Staff()
         {
 
         }
 
-        public void HackNSlash()
+        public void Empower()
         {
             throw new NotImplementedException();
         }

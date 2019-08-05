@@ -43,6 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Characters\Melee\Assasin.cs" />
+    <Compile Include="Characters\Melee\Knight.cs" />
+    <Compile Include="Characters\Melee\Warrior.cs" />
+    <Compile Include="Characters\Spellcasters\Droid.cs" />
+    <Compile Include="Characters\Spellcasters\Mage.cs" />
+    <Compile Include="Characters\Spellcasters\Necromancer.cs" />
+    <Compile Include="Equipment\Armors\Heavy\Chainlink.cs" />
+    <Compile Include="Equipment\Armors\Leather\LightLeatherVest.cs" />
+    <Compile Include="Equipment\Armors\Light\ClothRobe.cs" />
+    <Compile Include="Equipment\Weapons\Blunt\Hammers.cs" />
+    <Compile Include="Equipment\Weapons\Blunt\Staff.cs" />
+    <Compile Include="Equipment\Weapons\Sharp\Axe.cs" />
+    <Compile Include="Equipment\Weapons\Sharp\Sword.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

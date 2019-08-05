@@ -1,4 +1,6 @@
 ﻿using MagicDestroyers.Equipment.Armors.Heavy;
+using MagicDestroyers.Equipment.Armors.Light;
+using MagicDestroyers.Equipment.Weapons.Blunt;
 using MagicDestroyers.Equipment.Weapons.Sharp;
 using System;
 using System.Collections.Generic;
@@ -16,27 +18,143 @@ namespace MagicDestroyers.Characters.Melee
         private string faction;
         private string name;
 
-        private Chainlink bodyArmor;
-        private Axe weapon;
+        public Chainlink bodyArmor
+        {
+            get
+            {
+                return bodyArmor;
+            }
+            set
+            {
+                bodyArmor = value;
+            }
+        }
+
+        private Hammers weapon
+        {
+            get
+            {
+                return weapon;
+            }
+            set
+            {
+                weapon = value;
+            }
+        }
+
+        public int AbilityPoints
+        {
+            get
+            {
+                return abilityPoints;
+            }
+            set
+            {
+                if (value >= 0 && value <= 10)
+                {
+                    abilityPoints=value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "The value must be above 0 and 10");
+                }
+            }
+        }
+
+        public int HealthPoint
+        {
+            get
+            {
+                return healthPoint;
+            }
+            set
+            {
+                if (value > 0 && value <= 100)
+                {
+                    healthPoint = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "The value must be between 0 and 100");
+                }
+            }
+        }
+
+        public int Level
+        {
+            get
+            {
+                return level;
+            }
+            set
+            {
+                if (value >= 0)
+                {
+                    level = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Level should be a positive value");
+                }
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if (value.Length >= 3 && value.Length <= 12)
+                {
+                    name = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Name should have between 3 and 12 characters");
+                }
+            }
+        }
+
+        public string Faction
+        {
+            get
+            {
+                return faction;
+            }
+            set
+            {
+                if (value=="Melee" || value=="Spellcaster")
+                {
+                    faction = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty,"Name can either be Melee or Spellcaster");
+                }
+            }
+        }
 
         public Knight()
         {
 
         }
 
-        public void Execute()
+        public void HolyBlow()
         {
-
+            throw new NotImplementedException();
         }
 
-        public void SkinHarden()
+        public void PurifySoul()
         {
-
+            throw new NotImplementedException();
         }
 
-        public void Strike()
+        public void RighteousWings()
         {
-
+            throw new NotImplementedException();
         }
     }
 }
