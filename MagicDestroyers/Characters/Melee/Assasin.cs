@@ -47,7 +47,7 @@ namespace MagicDestroyers.Characters.Melee
             }
             set
             {
-                if (value >= 0 && value <= 100)
+                if (value >= 0 && value <= 120)
                 {
                     healthPoint = value;
                 }
@@ -68,7 +68,7 @@ namespace MagicDestroyers.Characters.Melee
             {
                 if (value >= 0)
                 {
-                    level = value;
+                    healthPoint = value;
                 }
                 else
                 {
@@ -110,7 +110,7 @@ namespace MagicDestroyers.Characters.Melee
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, "NAme can either be Melee or Spellcaster");
+                    throw new ArgumentOutOfRangeException(string.Empty, "Faction can either be Melee or Spellcaster");
                 }
             }
         }

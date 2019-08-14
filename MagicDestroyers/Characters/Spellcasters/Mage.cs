@@ -18,6 +18,12 @@ namespace MagicDestroyers.Characters.Spellcasters
         private string faction;
         private string name;
 
+        public Mage()
+        {
+
+        }
+
+
         public ClothRobe bodyArmor
         {
             get
@@ -50,9 +56,9 @@ namespace MagicDestroyers.Characters.Spellcasters
             }
             set
             {
-                if (value >= 0 && value <= 10)
+                if (value >= 0 && value <= 100)
                 {
-                    value = abilityPoints;
+                    abilityPoints = value;
                 }
                 else
                 {
@@ -128,18 +134,13 @@ namespace MagicDestroyers.Characters.Spellcasters
             {
                 if (value == "Melee" || value == "Spellcaster")
                 {
-                    value = faction;
+                    faction = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Name can either be Melee or Spellcaster");
+                    throw new ArgumentException(string.Empty, "Faction can either be Melee or Spellcaster");
                 }
             }
-        }
-
-        public Mage()
-        {
-
         }
 
         public void Fireball()

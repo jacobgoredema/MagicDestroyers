@@ -20,7 +20,7 @@ namespace MagicDestroyers.Equipment.Weapons.Blunt
             {
                 if (value >= 0)
                 {
-                    value = damage;
+                    damage=value;
                 }
                 else
                 {

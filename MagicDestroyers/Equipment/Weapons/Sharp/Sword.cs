@@ -18,7 +18,14 @@ namespace MagicDestroyers.Equipment.Weapons.Sharp
             }
             set
             {
-                damage = value;
+                if (value>0)
+                {
+                    damage = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Damage valuw should be a positive number");
+                }
             }
         }
 
@@ -27,9 +34,9 @@ namespace MagicDestroyers.Equipment.Weapons.Sharp
 
         }
 
-        public void HackNSlash()
+        public void BloodThirst()
         {
-
+            throw new NotImplementedException();
         }
     }
 }

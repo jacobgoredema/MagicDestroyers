@@ -18,6 +18,8 @@ namespace MagicDestroyers.Characters.Spellcasters
         private string faction;
         private string name;
 
+        private Staff weapon;
+
         public int AbilityPoints
         {
             get
@@ -28,7 +30,7 @@ namespace MagicDestroyers.Characters.Spellcasters
             {
                 if (value >= 0 && value <= 10)
                 {
-                    value = abilityPoints;
+                    abilityPoints = value;
                 }
                 else
                 {
@@ -66,7 +68,7 @@ namespace MagicDestroyers.Characters.Spellcasters
             {
                 if (value >= 0)
                 {
-                    level = value;
+                    healthPoints = value;
                 }
                 else
                 {
@@ -113,9 +115,13 @@ namespace MagicDestroyers.Characters.Spellcasters
                 }
             }
         }
-
-        private Staff weapon;
+        
         private LightLeatherVest bodyArmor;
+
+        public Droid()
+        {
+
+        }
 
         public LightLeatherVest BodyArmor
         {
@@ -142,10 +148,6 @@ namespace MagicDestroyers.Characters.Spellcasters
             }
         }
 
-        public Droid()
-        {
-
-        }
 
         public void MoonFire()
         {

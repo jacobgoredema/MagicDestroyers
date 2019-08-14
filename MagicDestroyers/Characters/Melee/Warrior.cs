@@ -19,6 +19,50 @@ namespace MagicDestroyers.Characters.Melee
         private Chainlink bodyArmor;
         private Axe weapon;
 
+        public Warrior():this("Bob",1)
+        {
+        }
+
+        public Warrior(string name, int level):this(name,level,120)
+        {
+        }
+
+        public Warrior(string name, int level, int healthPoints)
+        {
+            Name = name;
+            Level = level;
+            HealthPoint = healthPoint;
+
+            AbilityPoints = 100;
+            faction = "Meele";
+            BodyArmor = new Chainlink();
+            Weapon = new Axe();
+        }
+
+        public Chainlink BodyArmor
+        {
+            get
+            {
+                return bodyArmor;
+            }
+            set
+            {
+                bodyArmor = value;
+            }
+        }
+
+        public Axe Weapon
+        {
+            get
+            {
+                return weapon;
+            }
+            set
+            {
+                weapon=value;
+            }
+        }
+
         public int AbilityPoints
         {
             get
@@ -69,7 +113,7 @@ namespace MagicDestroyers.Characters.Melee
             {
                 if (value>=0)
                 {
-                    level = value;
+                    healthPoint = value;
                 }
                 else
                 {
@@ -92,7 +136,7 @@ namespace MagicDestroyers.Characters.Melee
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, "The faction should either be Melee or Spellcaster");
+                    throw new ArgumentException(string.Empty, "The faction should either be Melee or Spellcaster");
                 }
             }
         }
@@ -116,11 +160,7 @@ namespace MagicDestroyers.Characters.Melee
             }
         }
 
-        public Warrior()
-        {
-
-
-        }
+        
 
         public void Execute()
         {

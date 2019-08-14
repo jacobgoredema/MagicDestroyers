@@ -8,19 +8,19 @@ namespace MagicDestroyers.Equipment.Armors.Light
 {
     public class ClothRobe
     {
-        private int armorpoints;
+        private int armorPoints;
 
         public int Armorpoints
         {
             get
             {
-                return armorpoints;
+                return armorPoints;
             }
             set
             {
                 if (value >= 0)
                 {
-                    value = armorpoints;
+                    armorPoints=value;
                 }
                 else
                 {

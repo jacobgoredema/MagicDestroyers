@@ -20,7 +20,7 @@ namespace MagicDestroyers.Equipment.Armors.Heavy
             {
                 if (value >= 0)
                 {
-                    value = armorPoints;
+                    armorPoints = value;
                 }
                 else
                 {

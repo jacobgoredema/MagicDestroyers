@@ -17,7 +17,29 @@ namespace MagicDestroyers.Characters.Spellcasters
         private string faction;
         private string name;
 
-        private LightLeatherVest bodyArmor
+        private LightLeatherVest bodyArmor;
+        private Sword weapon;
+
+        public int AbilityPoints
+        {
+            get
+            {
+                return abilityPoints;
+            }
+            set
+            {
+                if (value >= 0 && value <= 100)
+                {
+                    abilityPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "The value must be above 0 and 10");
+                }
+            }
+        }
+
+        private LightLeatherVest BodyArmor
         {
             get
             {
@@ -28,8 +50,6 @@ namespace MagicDestroyers.Characters.Spellcasters
                 bodyArmor = value;
             }
         }
-
-        private  Sword weapon;
 
         public Sword Weapon
         {
@@ -43,24 +63,7 @@ namespace MagicDestroyers.Characters.Spellcasters
             }
         }
 
-        public int Abilitypoints
-        {
-            get
-            {
-                return abilityPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 10)
-                {
-                    value = abilityPoints;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "The value must be above 0 and 10");
-                }
-            }
-        }
+
 
         public int HealthPoints
         {
@@ -133,7 +136,7 @@ namespace MagicDestroyers.Characters.Spellcasters
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Name can either be Melee or Spellcaster");
+                    throw new ArgumentOutOfRangeException(string.Empty, "Faction can either be Melee or Spellcaster");
                 }
             }
         }
@@ -153,7 +156,7 @@ namespace MagicDestroyers.Characters.Spellcasters
             throw new NotImplementedException();
         }
 
-        public void BoneShielde()
+        public void BoneShield()
         {
             throw new NotImplementedException();
         }

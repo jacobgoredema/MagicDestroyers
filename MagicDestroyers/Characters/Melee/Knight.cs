@@ -17,8 +17,10 @@ namespace MagicDestroyers.Characters.Melee
         private int level;
         private string faction;
         private string name;
+        private Chainlink bodyArmor;
+        private Hammers weapon;
 
-        public Chainlink bodyArmor
+        public Chainlink BodyArmor
         {
             get
             {
@@ -30,7 +32,7 @@ namespace MagicDestroyers.Characters.Melee
             }
         }
 
-        private Hammers weapon
+        private Hammers Weapon
         {
             get
             {
@@ -90,7 +92,7 @@ namespace MagicDestroyers.Characters.Melee
             {
                 if (value >= 0)
                 {
-                    level = value;
+                    healthPoint = value;
                 }
                 else
                 {
@@ -132,7 +134,7 @@ namespace MagicDestroyers.Characters.Melee
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty,"Name can either be Melee or Spellcaster");
+                    throw new ArgumentOutOfRangeException(string.Empty,"Faction can either be Melee or Spellcaster");
                 }
             }
         }
