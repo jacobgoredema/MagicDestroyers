@@ -1,4 +1,5 @@
-﻿using MagicDestroyers.Equipment.Armors.Heavy;
+﻿using MagicDestroyers.Enums;
+using MagicDestroyers.Equipment.Armors.Heavy;
 using MagicDestroyers.Equipment.Weapons.Sharp;
 using System;
 using System.Collections.Generic;
@@ -10,20 +11,26 @@ namespace MagicDestroyers.Characters.Melee
 {
     public class Warrior
     {
+        private const string Default_Name = "Bob";
+        private const int Default_Level = 1;
+        private const int default_health_Points = 120;
+        private const Faction Default_Faction = Enums.Faction.Melee;
+        private const int Ability_Points = 100;
+
         private int abilityPoints;
         private int healthPoint;
         private int level;
-        private string faction;
+        private Faction faction;
         private string name;
 
         private Chainlink bodyArmor;
         private Axe weapon;
 
-        public Warrior():this("Bob",1)
+        public Warrior():this(Default_Name,Default_Level)
         {
         }
 
-        public Warrior(string name, int level):this(name,level,120)
+        public Warrior(string name, int level):this(name,level,default_health_Points)
         {
         }
 
@@ -33,8 +40,8 @@ namespace MagicDestroyers.Characters.Melee
             Level = level;
             HealthPoint = healthPoint;
 
-            AbilityPoints = 100;
-            faction = "Meele";
+            AbilityPoints = Ability_Points;
+            faction = Default_Faction;
             BodyArmor = new Chainlink();
             Weapon = new Axe();
         }
@@ -122,7 +129,7 @@ namespace MagicDestroyers.Characters.Melee
             }
         }
 
-        public string Faction
+        public Faction Faction
         {
             get
             {
@@ -130,14 +137,7 @@ namespace MagicDestroyers.Characters.Melee
             }
             set
             {
-                if (value.ToLower()=="Melee" || value.ToLower()=="Spellcaster")
-                {
-                    faction = value;
-                }
-                else
-                {
-                    throw new ArgumentException(string.Empty, "The faction should either be Melee or Spellcaster");
-                }
+                faction = value;
             }
         }
 

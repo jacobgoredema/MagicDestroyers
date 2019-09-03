@@ -1,4 +1,5 @@
-﻿using MagicDestroyers.Equipment.Armors.Heavy;
+﻿using MagicDestroyers.Enums;
+using MagicDestroyers.Equipment.Armors.Heavy;
 using MagicDestroyers.Equipment.Armors.Leather;
 using MagicDestroyers.Equipment.Weapons.Sharp;
 using System;
@@ -14,7 +15,7 @@ namespace MagicDestroyers.Characters.Spellcasters
         private int abilityPoints;
         private int healthPoints;
         private int level;
-        private string faction;
+        private Faction faction;
         private string name;
 
         private LightLeatherVest bodyArmor;
@@ -122,7 +123,7 @@ namespace MagicDestroyers.Characters.Spellcasters
             }
         }
 
-        public string Faction
+        public Faction Faction
         {
             get
             {
@@ -130,14 +131,7 @@ namespace MagicDestroyers.Characters.Spellcasters
             }
             set
             {
-                if (value == "Melee" || value == "Spellcaster")
-                {
-                    faction = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Faction can either be Melee or Spellcaster");
-                }
+                faction = value;
             }
         }
 
