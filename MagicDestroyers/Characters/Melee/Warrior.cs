@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MagicDestroyers.Characters.Melee
 {
-    public class Warrior
+    public class Warrior:Melee
     {
         private const string Default_Name = "Bob";
         private const int Default_Level = 1;
@@ -17,11 +17,6 @@ namespace MagicDestroyers.Characters.Melee
         private const Faction Default_Faction = Enums.Faction.Melee;
         private const int Ability_Points = 100;
 
-        private int abilityPoints;
-        private int healthPoint;
-        private int level;
-        private Faction faction;
-        private string name;
 
         private Chainlink bodyArmor;
         private Axe weapon;
@@ -70,95 +65,7 @@ namespace MagicDestroyers.Characters.Melee
             }
         }
 
-        public int AbilityPoints
-        {
-            get
-            {
-                return abilityPoints;
-            }
-            set
-            {
-                if(value>=0 && value<=10)
-                {
-                    abilityPoints = value;
 
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Value should be greater than 0 and less than or equal to 10");
-                }
-            }
-        }
-
-        public int HealthPoint
-        {
-            get
-            {
-                return healthPoint;
-            }
-            set
-            {
-                if (value>=0 && value<=120)
-                {
-                    healthPoint = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Value should be greater than 0 and less than or equal to 120");
-                }
-            }
-        }
-
-        public int Level
-        {
-            get
-            {
-                return level;
-            }
-
-            set
-            {
-                if (value>=0)
-                {
-                    healthPoint = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Value should be greater than 0");
-                }
-            }
-        }
-
-        public Faction Faction
-        {
-            get
-            {
-                return faction;
-            }
-            set
-            {
-                faction = value;
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if (value.Length>=3 && value.Length<=12)
-                {
-                    name = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Name should be between 3 and 12 characters.");
-                }
-            }
-        }
 
         
 
