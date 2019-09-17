@@ -21,24 +21,27 @@ namespace MagicDestroyers.Characters.Melee
         private Chainlink bodyArmor;
         private Axe weapon;
 
+        private readonly Chainlink BODY_ARMOR = new Chainlink();
+        private readonly Axe WEAPON = new Axe();
+
         public Warrior():this(Default_Name,Default_Level)
         {
         }
 
-        public Warrior(string name, int level):this(name,level,default_health_Points)
+        public Warrior(string name, int level)
+            :this(name,level,default_health_Points)
         {
         }
 
-        public Warrior(string name, int level, int healthPoints)
+        public Warrior(string name,int level, int healthPoints)
         {
             Name = name;
             Level = level;
-            HealthPoint = healthPoint;
-
+            HealthPoint = healthPoints;
             AbilityPoints = Ability_Points;
-            faction = Default_Faction;
-            BodyArmor = new Chainlink();
-            Weapon = new Axe();
+            Faction = Default_Faction;
+            BodyArmor = BODY_ARMOR;
+            Weapon = WEAPON;
         }
 
         public Chainlink BodyArmor

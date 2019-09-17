@@ -6,32 +6,18 @@ using System.Threading.Tasks;
 
 namespace MagicDestroyers.Equipment.Armors.Leather
 {
-    public class LightLeatherVest
+    public class LightLeatherVest:Leather
     {
-        private int armorPoints;
+        private const int ARMOR_POINTS = 10;
 
-        public int ArmorPoints
+        public LightLeatherVest():this(ARMOR_POINTS)
         {
-            get
-            {
-                return armorPoints;
-            }
-            set
-            {
-                if (value >= 0)
-                {
-                    armorPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Armor points should be a positive number");
-                }
-            }
+
         }
 
-        public LightLeatherVest()
+        public LightLeatherVest(int armorPoints)
         {
-
+            this.ArmorPoints = armorPoints;
         }
     }
 }

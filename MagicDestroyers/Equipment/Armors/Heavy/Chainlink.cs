@@ -6,34 +6,19 @@ using System.Threading.Tasks;
 
 namespace MagicDestroyers.Equipment.Armors.Heavy
 {
-    public class Chainlink
+    public class Chainlink:Heavy
     {
-        private int armorPoints;
+        private const int ARMOR_POINTS = 10;
+        private int aRMOR_POINTS;
 
-        public int Armorpoints
-        {
-            get
-            {
-                return armorPoints;
-            }
-            set
-            {
-                if (value >= 0)
-                {
-                    armorPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Armor points must be a positive number");
-                }
-            }
-        }
-
-        public Chainlink()
+        public Chainlink():this(ARMOR_POINTS)
         {
 
         }
 
-
+        public Chainlink(int armorPoints)
+        {
+            this.ArmorPoints = armorPoints;
+        }
     }
 }

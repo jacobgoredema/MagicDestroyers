@@ -6,32 +6,19 @@ using System.Threading.Tasks;
 
 namespace MagicDestroyers.Equipment.Weapons.Blunt
 {
-    public class Hammers
+    public class Hammers:Blunt
     {
-        private int damage;
+        private const int DAMAGE_POINTS = 10;
+        private int dAMAGE_POINTS;
 
-        public int Damage
+        public Hammers():this(DAMAGE_POINTS)
         {
-            get
-            {
-                return damage;
-            }
-            set
-            {
-                if (value >= 0)
-                {
-                    damage=value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Damage should be a positive number");
-                }
-            }
+
         }
 
-        public Hammers()
+        public Hammers(int armorPoints)
         {
-
+            this.DamagePoints = armorPoints;
         }
 
         public void Stun()

@@ -11,110 +11,42 @@ using System.Threading.Tasks;
 
 namespace MagicDestroyers.Characters.Spellcasters
 {
-    public class Droid
+    public class Droid:Spellcaster
     {
-        private int abilityPoints;
-        private int healthPoints;
-        private int level;
-        private Faction faction;
-        private string name;
+        private const int MANA_POINTS = 100;
+        private const int HEALTH_POINTS =120;
+        private const int LEVEL =1;
+        private const Faction FACTION=Faction.Spellcaster;
+        private const string NAME="Cenarius";
+
+        private readonly LightLeatherVest BODY_ARMOR = new LightLeatherVest();
+        private readonly Staff WEAPON = new Staff();
 
         private Staff weapon;
-
-        public int AbilityPoints
-        {
-            get
-            {
-                return abilityPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 10)
-                {
-                    abilityPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "The value must be above 0 and 10");
-                }
-            }
-        }
-
-        public int HealthPoints
-        {
-            get
-            {
-                return healthPoints;
-            }
-            set
-            {
-                if (value > 0 && value <= 100)
-                {
-                    healthPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "The value must be between 0 and 100");
-                }
-            }
-        }
-
-        public int Level
-        {
-            get
-            {
-                return level;
-            }
-            set
-            {
-                if (value >= 0)
-                {
-                    healthPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Level should be a positive value");
-                }
-            }
-        }
-
-
-        public Faction Faction
-        {
-            get
-            {
-                return faction;
-            }
-            set
-            {
-                faction = value;
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if (value.Length >= 3 && value.Length <= 12)
-                {
-                    name = value;
-                }
-                else
-                {
-                    throw new ArgumentException(string.Empty, "Name should have between 3 and 12 characters");
-                }
-            }
-        }
-        
         private LightLeatherVest bodyArmor;
+        private string name1;
+        private int level1;
+        private int hEALTH_POINTS;
 
-        public Droid()
+        public Droid():this(NAME,LEVEL)
         {
 
+        }
+
+        public Droid(string name, int level)
+            :this(name,level,HEALTH_POINTS)
+        {
+        }
+
+        public Droid(string name, int level, int healthPoints)
+        {
+            Name = name;
+            level1 = level;
+            HealthPoint = healthPoints;
+            Manapoints = MANA_POINTS;
+            Faction = FACTION;
+            BodyArmor = BODY_ARMOR;
+            Weapon = WEAPON;
         }
 
         public LightLeatherVest BodyArmor

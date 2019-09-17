@@ -3,35 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MagicDestroyers.Equipment.Weapons.Blunt;
 
 namespace MagicDestroyers.Equipment.Armors.Light
 {
-    public class ClothRobe
+    public class ClothRobe:Light
     {
-        private int armorPoints;
+        private const int ARMOR_POINTS = 10;
 
-        public int Armorpoints
+        public ClothRobe():this(ARMOR_POINTS)
         {
-            get
-            {
-                return armorPoints;
-            }
-            set
-            {
-                if (value >= 0)
-                {
-                    armorPoints=value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Armour points value should be a positive number");
-                }
-            }
+
         }
 
-        public ClothRobe()
+        public ClothRobe(int armorPoints)
         {
+            this.ArmorPoints = armorPoints;
+        }
 
-        }        
+        public static implicit operator ClothRobe(Staff v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

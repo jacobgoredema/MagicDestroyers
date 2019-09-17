@@ -6,32 +6,19 @@ using System.Threading.Tasks;
 
 namespace MagicDestroyers.Equipment.Weapons.Sharp
 {
-    public class Axe
+    public class Axe:Sharp
     {
-        private int damage;
+        private const int DAMAGE_POINTS = 10;
+        private int dAMAGE_POINTS;
 
-        public int Damage
+        public Axe():this(DAMAGE_POINTS)
         {
-            get
-            {
-                return damage;
-            }
-            set
-            {
-                if (value >= 0)
-                {
-                    damage = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Damage should be a positive number");
-                }
-            }
+
         }
 
-        public Axe()
+        public Axe(int armorPoints)
         {
-
+            this.DamagePoints = armorPoints;
         }
 
         public void HackNSlash()

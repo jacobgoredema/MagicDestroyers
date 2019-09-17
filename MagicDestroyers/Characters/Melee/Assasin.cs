@@ -10,104 +10,19 @@ using System.Threading.Tasks;
 
 namespace MagicDestroyers.Characters.Melee
 {
-    public class Assasin
+    public class Assasin:Melee
     {
-        private int abilityPoints;
-        private int healthPoint;
-        private int level;
-        private Faction faction;
-        private string name;
+        private const int ABILITYPOINTS = 100;
+        private const int HEALTHPOINTS = 120;
+        private const int LEVEL = 1;
+        private const Faction FACTION=Faction.Melee;
+        private const string NAME = "Snark";
 
-        private Sword weapon;
+        private readonly Sword WEAPON= new Sword();
+        private readonly LightLeatherVest BODY_ARMOR= new LightLeatherVest();
+
         private LightLeatherVest bodyArmor;
-
-        public int AbilityPoints
-        {
-            get
-            {
-                return abilityPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 10)
-                {
-                    abilityPoints=value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "The value must be above 0 and 10");
-                }
-            }
-        }
-
-        public int HealthPoint
-        {
-            get
-            {
-                return healthPoint;
-            }
-            set
-            {
-                if (value >= 0 && value <= 120)
-                {
-                    healthPoint = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "The value must be between 0 and 100");
-                }
-            }
-        }
-
-        public int Level
-        {
-            get
-            {
-                return level;
-            }
-            set
-            {
-                if (value >= 0)
-                {
-                    healthPoint = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Level should be a positive value");
-                }
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if (value.Length >= 3 && value.Length <= 12)
-                {
-                    name = value;
-                }
-                else
-                {
-                    throw new ArgumentException(string.Empty, "Name should have between 3 and 12 characters");
-                }
-            }
-        }
-
-        public Faction Faction
-        {
-            get
-            {
-                return faction;
-            }
-            set
-            {
-                faction = value;
-            }
-        }
+        private Sword weapon;
 
         public LightLeatherVest BodyArmor
         {
@@ -133,9 +48,25 @@ namespace MagicDestroyers.Characters.Melee
             }
         }
 
-        public Assasin()
+        public Assasin():this(NAME,LEVEL)
         {
 
+        }
+
+        public Assasin(string name, int level)
+            :this(name,level,HEALTHPOINTS)
+        {
+        }
+
+        public Assasin(string name, int level, int healthPoints)
+        {
+            Name = name;
+            Level = level;
+            HealthPoint = healthPoints;
+            AbilityPoints = ABILITYPOINTS;
+            Faction = FACTION;
+            BodyArmor = BODY_ARMOR;
+            Weapon = WEAPON;
         }
 
         public void Raze()

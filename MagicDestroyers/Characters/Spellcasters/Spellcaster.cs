@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MagicDestroyers.Characters.Spellcasters
 {
-    public class Spellcaster
+    public class Spellcaster:Character
     {
         private int manaPoints;
 
@@ -19,7 +19,7 @@ namespace MagicDestroyers.Characters.Spellcasters
 
             set
             {
-                if(value>0&&value<=10)
+                if(value>0 && value<=10)
                 {
                     manaPoints = value;
                 }

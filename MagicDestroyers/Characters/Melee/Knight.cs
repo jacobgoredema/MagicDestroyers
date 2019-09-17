@@ -11,15 +11,24 @@ using System.Threading.Tasks;
 
 namespace MagicDestroyers.Characters.Melee
 {
-    public class Knight
+    public class Knight:Melee
     {
-        private int abilityPoints;
-        private int healthPoint;
-        private int level;
-        private Faction faction;
-        private string name;
+        private const int ABILITY_POINTS= 100;
+        private const int HEALTH_POINTS = 120;
+        private const int LEVEL = 1;
+        private Faction FACTION =Faction.Melee;
+        private const string NAME ="Author";
+
+        private readonly Chainlink BODY_ARMOR = new Chainlink();
+        private readonly Hammers WEAPON = new Hammers();
+
         private Chainlink bodyArmor;
         private Hammers weapon;
+        private string nAME;
+        private int lEVEL;
+        private string name1;
+        private int level1;
+        private int hEALTH_POINTS;
 
         public Chainlink BodyArmor
         {
@@ -45,99 +54,6 @@ namespace MagicDestroyers.Characters.Melee
             }
         }
 
-        public int AbilityPoints
-        {
-            get
-            {
-                return abilityPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 10)
-                {
-                    abilityPoints=value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "The value must be above 0 and 10");
-                }
-            }
-        }
-
-        public int HealthPoint
-        {
-            get
-            {
-                return healthPoint;
-            }
-            set
-            {
-                if (value > 0 && value <= 100)
-                {
-                    healthPoint = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "The value must be between 0 and 100");
-                }
-            }
-        }
-
-        public int Level
-        {
-            get
-            {
-                return level;
-            }
-            set
-            {
-                if (value >= 0)
-                {
-                    healthPoint = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Level should be a positive value");
-                }
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if (value.Length >= 3 && value.Length <= 12)
-                {
-                    name = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Name should have between 3 and 12 characters");
-                }
-            }
-        }
-
-        public Faction Faction
-        {
-            get
-            {
-                return faction;
-            }
-            set
-            {
-                faction = value;
-            }
-        }
-
-        public Knight()
-        {
-
-        }
-
         public void HolyBlow()
         {
             throw new NotImplementedException();
@@ -151,6 +67,27 @@ namespace MagicDestroyers.Characters.Melee
         public void RighteousWings()
         {
             throw new NotImplementedException();
+        }
+
+        public Knight():this(NAME,LEVEL)
+        {
+
+        }
+
+        public Knight(string name, int level)
+            : this(name,level,HEALTH_POINTS)
+        {
+        }
+
+        public Knight(string name, int level, int healthPoints)
+        {
+            Name = name;
+            Level = level;
+            HealthPoint = healthPoints;
+            AbilityPoints = ABILITY_POINTS;
+            Faction = FACTION;
+            BodyArmor = BODY_ARMOR;
+            Weapon = WEAPON;
         }
     }
 }

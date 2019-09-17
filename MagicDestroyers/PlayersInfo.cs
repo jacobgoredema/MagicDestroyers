@@ -28,6 +28,59 @@ namespace MagicDestroyers
 
         }
 
+        public static void RetrieveFullInfo()
+        {
 
+        }
+
+        public static void PrintFullInfo()
+        {
+
+        }
+
+        public static void EraseFullInfo()
+        {
+
+        }
+
+        public static void UpdateScores()
+        {
+
+        }
+
+        public static void RetrieveScores()
+        {
+
+        }
+
+        public static void PrintScores()
+        {
+
+        }
+
+        public static void EraseScores()
+        {
+
+        }
+
+        public static void UpdateLevels()
+        {
+
+        }
+
+        public static void RetrieveLevels()
+        {
+
+        }
+
+        public static void PrintLevels()
+        {
+
+        }
+
+        public static void EraseLevels()
+        {
+
+        }
     }
 }
